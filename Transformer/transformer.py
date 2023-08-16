@@ -1,10 +1,11 @@
+import numpy as np
+import tensorflow as tf
+
 from common import batch_matmul
 from decoder import decoder_stack
 from embedding import positional_embedding
 from encoder import encoder_stack
 from masking import auto_regressive_mask, padding_mask
-import numpy as np
-import tensorflow as tf
 
 
 def transformer(encoder_input,
@@ -24,9 +25,7 @@ def transformer(encoder_input,
                 dropout_rate=None,
                 padding_id=0,
                 start_of_sequence_id=2):
-
     with tf.variable_scope("transformer"):
-
         with tf.variable_scope("decoder_alignment"):
             decoder_input = tf.pad(decoder_labels, [[0, 0], [1, 0]],
                                    constant_values=start_of_sequence_id,

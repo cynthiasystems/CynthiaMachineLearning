@@ -1,4 +1,5 @@
 import tensorflow as tf
+
 from common import batch_matmul
 
 
@@ -23,7 +24,6 @@ def multi_head_attention(
         num_heads=8,
         regularizer=None,
         mask=None):
-
     if internal_size % num_heads:
         raise ValueError("internal size {} % num heads {} != 0".format(internal_size, num_heads))
 

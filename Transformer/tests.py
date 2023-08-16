@@ -1,3 +1,8 @@
+import unittest
+
+import numpy as np
+import tensorflow as tf
+
 from activations import prelu
 from attention import multi_head_attention
 from embedding import positional_embedding
@@ -5,9 +10,6 @@ from encoder import encoder_layer, encoder_stack
 from masking import auto_regressive_mask, padding_mask
 from normalization import layer_normalization
 from transformer import transformer
-import numpy as np
-import tensorflow as tf
-import unittest
 
 
 class TransformerBaseTest(unittest.TestCase):
@@ -19,7 +21,6 @@ class TransformerBaseTest(unittest.TestCase):
 class LayerNormalizationTest(TransformerBaseTest):
 
     def test_layer_norm(self):
-
         with tf.variable_scope("test_layer_norm"):
             inputs = tf.placeholder(dtype=np.float32, shape=(2, 3), name="inputs")
 
@@ -40,7 +41,6 @@ class LayerNormalizationTest(TransformerBaseTest):
 class ActivationsTest(TransformerBaseTest):
 
     def test_prelu(self):
-
         with tf.variable_scope("test_prelu"):
             inputs = tf.placeholder(dtype=np.float32, shape=(2, 3), name="inputs")
             output = prelu(inputs, regularizer=tf.contrib.layers.l2_regularizer(0.01))
@@ -112,12 +112,17 @@ class MultiHeadAttentionTest(TransformerBaseTest):
             attention_weights = result[1]
 
             self.assertEqual(attention_weights.shape, (2, 8, 5, 5), "attention shape is incorrect")
-            self.assertTrue(np.array_equal(attention_weights[0][0][:, 2:], np.zeros((5, 3))), "attention mask is incorrect")
-            self.assertTrue(np.array_equal(attention_weights[1][0][:, 4:], np.zeros((5, 1))), "attention mask is incorrect")
+            self.assertTrue(np.array_equal(attention_weights[0][0][:, 2:], np.zeros((5, 3))),
+                            "attention mask is incorrect")
+            self.assertTrue(np.array_equal(attention_weights[1][0][:, 4:], np.zeros((5, 1))),
+                            "attention mask is incorrect")
 
-            self.assertEqual(np.sum(attention_weights[0][0][0][2:]), 0., "softmax attention {} is incorrect".format(attention_weights[0][0][0]))
-            self.assertTrue(abs(np.sum(attention_weights[0][0][0][:2]) - 1.) < 2e-6, "softmax attention {} is incorrect".format(attention_weights[0][0][0]))
-            self.assertTrue(abs(np.sum(attention_weights) - 80.) < 2e-8, "softmax attention {} is incorrect".format(attention_weights))
+            self.assertEqual(np.sum(attention_weights[0][0][0][2:]), 0.,
+                             "softmax attention {} is incorrect".format(attention_weights[0][0][0]))
+            self.assertTrue(abs(np.sum(attention_weights[0][0][0][:2]) - 1.) < 2e-6,
+                            "softmax attention {} is incorrect".format(attention_weights[0][0][0]))
+            self.assertTrue(abs(np.sum(attention_weights) - 80.) < 2e-8,
+                            "softmax attention {} is incorrect".format(attention_weights))
 
     def test_auto_regressive_mask(self):
 
@@ -181,7 +186,8 @@ class EncoderTest(TransformerBaseTest):
         mask = padding_mask(inputs)
 
         encoder = encoder_stack(embedding,
-                                dropout_rate=tf.placeholder_with_default(tf.constant(0.0), name="dropout_rate", shape=[]),
+                                dropout_rate=tf.placeholder_with_default(tf.constant(0.0), name="dropout_rate",
+                                                                         shape=[]),
                                 internal_size=256,
                                 mask=mask,
                                 num_heads=8,

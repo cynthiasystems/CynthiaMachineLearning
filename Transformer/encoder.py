@@ -1,8 +1,9 @@
-from common import batch_matmul
+import tensorflow as tf
+
 from activations import prelu
 from attention import multi_head_attention
+from common import batch_matmul
 from normalization import layer_normalization
-import tensorflow as tf
 
 
 def encoder_layer(inputs,
@@ -11,7 +12,6 @@ def encoder_layer(inputs,
                   regularizer=None,
                   dropout_rate=None,
                   mask=None):
-
     with tf.variable_scope("self_attention"):
         self_attention = multi_head_attention([inputs, inputs, inputs],
                                               internal_size=internal_size,
@@ -64,7 +64,6 @@ def encoder_stack(inputs,
                   regularizer=None,
                   dropout_rate=None,
                   mask=None):
-
     output = inputs
 
     for i in range(num_layers):

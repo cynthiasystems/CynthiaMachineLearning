@@ -6,7 +6,6 @@ def positional_signal(sequence_length: int = None,
                       embedding_size: int = None,
                       min_timescale: float = 1.,
                       max_timescale: float = 1.e4):
-
     with tf.variable_scope("positional_signal"):
         positions = np.arange(sequence_length, dtype=np.float32)
         timescale_size = embedding_size / 2.
@@ -24,7 +23,6 @@ def positional_embedding(
         regularizer=None,
         min_timescale=1.,
         max_timescale=1.e4):
-
     if embedding_size % 2:
         raise ValueError("embedding_size should be even")
 

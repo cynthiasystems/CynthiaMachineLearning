@@ -1,8 +1,9 @@
+import tensorflow as tf
+
 from activations import prelu
 from attention import multi_head_attention
 from common import batch_matmul
 from normalization import layer_normalization
-import tensorflow as tf
 
 
 def decoder_layer(encoder_output,
@@ -13,7 +14,6 @@ def decoder_layer(encoder_output,
                   dropout_rate=None,
                   encoder_mask=None,
                   decoder_mask=None):
-
     with tf.variable_scope("decoder_self_attention"):
         decoder_self_attention = multi_head_attention([decoder_input, decoder_input, decoder_input],
                                                       internal_size=internal_size,
@@ -82,7 +82,6 @@ def decoder_stack(encoder_output,
                   dropout_rate=None,
                   encoder_mask=None,
                   decoder_mask=None):
-
     decoder_output = decoder_input
 
     for i in range(num_layers):

@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
+
 def create_accuracy(decoder_labels, padding_id, softmax):
     with tf.variable_scope("accuracy"):
         mask = tf.cast(tf.not_equal(decoder_labels, padding_id), dtype=np.float32)
