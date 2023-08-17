@@ -1,4 +1,4 @@
-# 🤖 CynthiaMachineLearning 🌟
+# 🤖 Cynthia Machine Learning 🌟
 
 Welcome to the heart and soul of **Cynthia's Machine Learning** endeavors! Dive into a realm where algorithms dance,
 neurons light up, and where the Cynthia Transformer truly shines. 🎉
