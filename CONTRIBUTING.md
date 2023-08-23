@@ -1,4 +1,4 @@
-# Contributing to Cynthia Java Client
+# Contributing to Cynthia Machine Learning
 
 Thank you for your interest in contributing to the Cynthia Java Client! We appreciate your effort and look forward to
 collaborating with you to improve the project. The following guidelines will help you understand the contribution
