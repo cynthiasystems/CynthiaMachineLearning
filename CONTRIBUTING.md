@@ -1,6 +1,6 @@
 # Contributing to Cynthia Machine Learning
 
-Thank you for your interest in contributing to the Cynthia Java Client! We appreciate your effort and look forward to
+Thank you for your interest in contributing to Cynthia Machine Learning! We appreciate your effort and look forward to
 collaborating with you to improve the project. The following guidelines will help you understand the contribution
 process and ensure a smooth experience for both you and the project maintainers.
 
@@ -32,7 +32,7 @@ engaging in any communication or submitting contributions to the project.
 
 ## Reporting Issues
 
-If you encounter any bugs or issues while using the Cynthia Java Client, please open a new issue in the repository. When
+If you encounter any bugs or issues while using Cynthia Machine Learning, please open a new issue in the repository. When
 reporting an issue, please provide the following information:
 
 - A clear and concise title for the issue.
@@ -40,4 +40,4 @@ reporting an issue, please provide the following information:
 - Any relevant information about your environment, such as your Java version, operating system, and any other libraries
   or tools you are using.
 
-We appreciate your help in making the Cynthia Java Client even better. Thank you for your contributions!
+We appreciate your help in making Cynthia Machine Learning even better. Thank you for your contributions!
