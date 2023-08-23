@@ -8,36 +8,49 @@ neurons light up, and where the Cynthia Transformer truly shines. 🎉
 Embark on a journey with our meticulously crafted Transformer model, a testament to our commitment to quality and
 innovation. Harness the power of attention mechanisms and watch as NLP barriers get shattered!
 
-## 🎉 Fun With The Cynthia Transformer!
-Ever wondered how to play with the Cynthia Transformer? Well, you're in for a treat! 🎩✨
+## 🚀 Dive into the World of Transformers with Cynthia! 🌌
 
-Let's take a whimsical journey through an example:
+Ever wondered how you could chat with aliens from another galaxy? While we can't guarantee extraterrestrial communication (yet 😉), our Cynthia Transformer lets you decode and translate sequences like a pro! Let's embark on this cosmic coding adventure together.
 
-### 1️⃣ Setting the Stage
-Let's define our encoder and decoder inputs. Think of these like magic runes that feed into our Transformer:
+### 🚀 Prepping Your Spaceship (Setup)
+
+First, let's define our inputs. Imagine these as the alien messages you're receiving and the replies you're sending back.
 
 ```python
-# encoder - Our secret language! 🗝️
-# ------------------------
-# 0: padding (like an empty space in a treasure map!)
-# 1: unknown (mysterious, right?)
-encoder_input_data = [[2, 3, 4, 0, 0],
-                      [5, 4, 3, 2, 0],
-                      [2, 3, 4, 3, 2]]
-
-# decoder - The magical decoder ring! 🌈
-# -------------------------
-# 0: padding
-# 1: unknown
-# 2: start of sequence (Let the magic begin!)
-# 3: end of sequence (And... scene!)
-decoder_input_data = [[9, 8, 7, 3, 0, 0],
-                      [4, 5, 6, 7, 8, 3],
-                      [9, 8, 3, 0, 0, 0]]
+encoder_input = tf.placeholder(np.int32, shape=[None, 5], name="encoder_input")
+decoder_labels = tf.placeholder(np.int32, shape=[None, 6], name="decoder_labels")
 ```
 
-### 2️⃣ Summoning The Magic
-With our magical runes ready, let's invoke the power of the Transformer!
+### 🌌 Venturing into the Galaxy (Transformer Call)
+
+Next, plug into the Cynthia Transformer! This is where the galactic translation magic happens. 🌠
+
+```python
+softmax, loss, accuracy = transformer(encoder_input,
+                                      decoder_labels,
+                                      encoder_vocab_size=6,
+                                      decoder_vocab_size=10)
+```
+
+### 🛸 Deciphering Alien Messages (Sample Data)
+
+Let's use some sample alien messages (and our human replies):
+
+```python
+# encoder (alien messages)
+encoder_data = [[2, 3, 4, 0, 0],  # "Hello? 🛸"
+               [5, 4, 3, 2, 0],  # "What planet? 🌍"
+               [2, 3, 4, 3, 2]]  # "Want pizza? 🍕"
+
+# decoder (our replies)
+decoder_data = [[9, 8, 7, 3, 0, 0],  # "Hey there! 👋"
+               [4, 5, 6, 7, 8, 3],  # "Earth. Wanna visit? 🚀"
+               [9, 8, 3, 0, 0, 0]]  # "Always! 🍕🎉"
+```
+
+### 🎉 Celebrate and Communicate!
+
+Run your session, iterate, and watch as the alien-human conversation unfolds!
 
 ```python
 optimizer = tf.train.AdamOptimizer().minimize(loss)
@@ -55,8 +68,7 @@ for i in range(200):
 
 ```
 
-### 🎈 Ta-da!
-And there you have it! With a sprinkle of magic (and some serious math under the hood!), you've just embarked on a delightful journey with the Cynthia Transformer.
+Remember, every coding journey is a story waiting to be told. Have fun with the Cynthia Transformer and may your codes always be cosmic! 🌠🛸👾
 
 ## 🔍 Quick Links
 
