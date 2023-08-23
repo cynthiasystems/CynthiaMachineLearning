@@ -1,8 +1,8 @@
-🚀 Cynthia Machine Learning 🌌
+# 🚀 Cynthia Machine Learning 🌌
 
 Welcome, cosmic coder, to the galactic core of Cynthia's Machine Learning adventures! Here, algorithms waltz across cosmic stages, neurons shimmer like distant stars, and amidst this splendor, the Cynthia Transformer radiates its brilliance. 🌠
 
-🤖 Cynthia Transformer's Galactic Tour 🌟
+## 🤖 Cynthia Transformer's Galactic Tour 🌟
 
 Strap in for an interstellar voyage with our masterfully forged Transformer model, a beacon of Cynthia's relentless pursuit of stellar quality and groundbreaking novelties. Unlock the mysteries of attention galaxies and witness as NLP frontiers crumble like meteor dust! 💥
 
